@@ -46,7 +46,9 @@ export default function MainNavigator() {
         name="Home"
         component={HomeStack}
         options={{
-          tabBarIcon: ({size, color}) => <Icon name="home" type="antdesign" />,
+          tabBarIcon: ({size, color}) => (
+            <Icon name="home" type="antdesign" color={color} size={size} />
+          ),
         }}
       />
       <Bottom.Screen
