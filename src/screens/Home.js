@@ -1,19 +1,28 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {} from 'react-native-elements';
+import React, {useState} from 'react';
+import {Alert, FlatList, StyleSheet, Text, View} from 'react-native';
+import {SearchBar} from 'react-native-elements';
 
-const Home = () => {
+//redux
+import {userValue, fetchSearch} from '../redux/action/recipeAction';
+import {connect} from 'react-redux';
+
+import {Card} from '../components';
+
+const Home = ({navigation}) => {
   return (
     <View>
-      <Text>Home</Text>
+      <SearchBar
+        placeholder="Type here ..."
+        onFocus={() => navigation.navigate('Search')}
+      />
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
+const mapStateToProps = state => ({
+  loading: state.recipe.loading,
+  searchtext: state.recipe.searchtext,
+  search: state.recipe.search,
 });
 
-export default Home;
+export default connect(mapStateToProps, {userValue, fetchSearch})(Home);

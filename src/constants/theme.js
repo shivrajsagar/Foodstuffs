@@ -1,6 +1,6 @@
 export default {
   colors: {
-    primary: '#00000',
+    primary: '#FA4A0C',
   },
   sizes: {
     base: 16,

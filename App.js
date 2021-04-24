@@ -1,26 +1,25 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  useColorScheme,
-} from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {ThemeProvider} from 'react-native-elements';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-
-import {Colors} from 'react-native/Libraries/NewAppScreen';
 import AppNavigator from './src/navigation/AppNavigator';
+
+import {theme} from './src/constants';
+import {Provider} from 'react-redux';
+
+import store from './src/redux';
 
 const App = () => {
   return (
     <SafeAreaProvider>
-      <NavigationContainer>
-        <ThemeProvider>
-          <AppNavigator />
-        </ThemeProvider>
-      </NavigationContainer>
+      <Provider store={store}>
+        <NavigationContainer>
+          <ThemeProvider theme={theme}>
+            <AppNavigator />
+          </ThemeProvider>
+        </NavigationContainer>
+      </Provider>
     </SafeAreaProvider>
   );
 };

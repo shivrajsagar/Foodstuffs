@@ -1,10 +1,11 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import {} from 'react-native-elements';
 
-const Loading = () => {
+const Likes = () => {
   return (
     <View>
-      <Text>Loading</Text>
+      <Text>Likes</Text>
     </View>
   );
 };
@@ -15,4 +16,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Loading;
+export default Likes;

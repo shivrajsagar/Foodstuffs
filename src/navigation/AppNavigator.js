@@ -11,7 +11,7 @@ const Stack = createStackNavigator();
 
 export default function AppNavigator() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName="Home" headerMode="none">
       <Stack.Screen name="Splash" component={Splash} />
       <Stack.Screen name="Welcome" component={Welcome} />
       <Stack.Screen name="Login" component={Login} />
